@@ -28,7 +28,7 @@
 // -------------------------------------------------------
 const PRODUCTS = [
     // Nümunə:
-    // { type: "image", src: "images/product-1.jpg", alt: "CAD/CAM Kampaniyası" },
+    // { type: "image", src: ""C:\Users\Nurxan\Pictures\Screenshots\Ekran şəkli 2026-05-28 043246.png"", alt: "CAD/CAM Kampaniyası" },
     // { type: "image", src: "images/product-2.jpg", alt: "Vario 230" },
     // { type: "image", src: "images/product-3.jpg", alt: "Creality Halot 97 Combo" },
     // { type: "image", src: "images/product-4.jpg", alt: "Zetin 20B Pro" },
