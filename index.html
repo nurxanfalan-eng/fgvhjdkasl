@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limon Dental Service</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- ==================== MAIN PAGE ==================== -->
+<div id="main-page">
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-left">
+            <button class="ayarlar-btn" id="openAyarlar">
+                <i class="fas fa-bars"></i> Ayarlar
+            </button>
+        </div>
+        <div class="header-logo">
+            <div class="logo-svg">
+                <svg width="36" height="36" viewBox="0 0 40 40">
+                    <ellipse cx="20" cy="20" rx="13" ry="18" fill="#e8c84a" transform="rotate(-30 20 20)"/>
+                    <circle cx="20" cy="20" r="7" fill="#1a6b41"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-brand">LİMON DENTAL</span>
+                <span class="logo-sub">SERVICE</span>
+            </div>
+        </div>
+        <div class="header-right">
+            <a href="https://limondental.az" target="_blank" class="website-link">
+                <i class="fas fa-globe"></i> limondental.az
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Layout -->
+    <div class="main-layout">
+
+        <!-- Sidebar Partners -->
+        <aside class="sidebar-partners">
+            <div class="sidebar-title">PARTNYORLAR</div>
+            <div class="partner-list" id="sidebarPartners">
+                <!-- Populated by JS -->
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-label">LİMON DENTAL</div>
+                <h1 class="hero-title">Stomatoloji avadanlıqların ehtiyat hissələri və peşəkar təmiri</h1>
+                <p class="hero-subtitle">Spare Parts for Dental Equipment and Professional Repair Services</p>
+
+                <div class="contact-cards">
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-card-label">TELEFON</div>
+                        <div class="contact-card-info">
+                            <a href="tel:+994102502015">010 250 20 15</a>
+                            <a href="tel:+994703800678">070 380 06 78</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fab fa-whatsapp"></i></div>
+                        <div class="contact-card-label">WHATSAPP</div>
+                        <div class="contact-card-info">
+                            <a href="https://wa.me/994102502015" target="_blank">010 250 20 15</a>
+                            <a href="https://wa.me/994703800678" target="_blank">070 380 06 78</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-location-dot"></i></div>
+                        <div class="contact-card-label">ÜNVAN</div>
+                        <div class="contact-card-info">
+                            <a href="https://maps.google.com/?q=Baki+Samaed+Vurgun+230" target="_blank">Bakı, Səməd Vurğun 230</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-card-label">EMAIL</div>
+                        <div class="contact-card-info">
+                            <a href="mailto:zaur.mikayilov@limondental.az">zaur.mikayilov@limondental.az</a>
+                            <a href="https://instagram.com/limondentalservis.az" target="_blank">@limondentalservis.az</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Best Sellers -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Tez-Tez Satılan Məhsullar</h2>
+                    <span class="section-badge">BEST SELLERS</span>
+                </div>
+                <div class="products-grid" id="productsGrid"></div>
+            </section>
+
+            <!-- Certificates -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Sertifikatlar</h2>
+                    <span class="section-badge">CERTIFICATES</span>
+                </div>
+                <div class="certificates-grid" id="certificatesGrid"></div>
+            </section>
+
+            <!-- Professional Trainings -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Peşəkar Təlimlər</h2>
+                    <span class="section-badge">PROFESSIONAL TRAININGS</span>
+                </div>
+
+                <div class="training-group">
+                    <div class="training-group-header">
+                        <h3 class="training-brand">Zubler</h3>
+                        <span class="training-country">GERMANY</span>
+                    </div>
+                    <p class="training-desc">Almaniya istehsalı olan Zubler brendinin avadanlıqlarının peşəkar təlimdən.</p>
+                    <div class="training-photos-grid" id="zublerPhotos"></div>
+                </div>
+
+                <div class="training-group">
+                    <div class="training-group-header">
+                        <h3 class="training-brand">TDSS</h3>
+                        <span class="training-country">TURKEY</span>
+                    </div>
+                    <p class="training-desc">Türkiyə istehsalı olan TDSS brendinin avadanlıqlarının peşəkar təlimi.</p>
+                    <div class="training-photos-grid" id="tdssPhotos"></div>
+                </div>
+
+                <div class="training-group">
+                    <div class="training-group-header">
+                        <h3 class="training-brand">Eighteeth</h3>
+                        <span class="training-country">CHİNA</span>
+                    </div>
+                    <p class="training-desc">Eighteeth brendinə məxsus avadanlıqların peşəkar təlimi.</p>
+                    <div class="training-photos-grid" id="eighteethPhotos"></div>
+                </div>
+
+                <div class="training-group">
+                    <div class="training-group-header">
+                        <h3 class="training-brand">Philden Milling</h3>
+                        <span class="training-country">CHİNA</span>
+                    </div>
+                    <p class="training-desc">Philden brendinə məxsus milling avadanlıqlarının peşəkar təlimi.</p>
+                    <div class="training-photos-grid" id="phildenPhotos"></div>
+                </div>
+            </section>
+
+            <!-- Partners Grid -->
+            <section class="section">
+                <div class="partners-grid" id="partnersGrid"></div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <svg width="32" height="32" viewBox="0 0 40 40">
+                        <ellipse cx="20" cy="20" rx="13" ry="18" fill="#e8c84a" transform="rotate(-30 20 20)"/>
+                        <circle cx="20" cy="20" r="7" fill="#2d9348"/>
+                    </svg>
+                    <div class="footer-logo-text">
+                        <span class="footer-logo-brand">limon</span>
+                        <span class="footer-logo-sub">SERVICE</span>
+                    </div>
+                </div>
+                <p class="footer-desc">Stomatoloji avadanlıqların ehtiyat hissələri və peşəkar təmir xidmətləri.</p>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">ƏLAQƏ</h4>
+                <div class="footer-links">
+                    <a href="tel:+994102502015" class="footer-link"><i class="fas fa-phone"></i> 010 250 20 15</a>
+                    <a href="tel:+994703800678" class="footer-link"><i class="fas fa-phone"></i> 070 380 06 78</a>
+                    <a href="https://maps.google.com/?q=Baku+Samaed+Vurgun+230" target="_blank" class="footer-link"><i class="fas fa-location-dot"></i> Bakı, Səməd Vurğun 230</a>
+                    <a href="mailto:zaur.mikayilov@limondental.az" class="footer-link"><i class="fas fa-envelope"></i> zaur.mikayilov@limondental.az</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="footer-col-title">SAYT & SOSİAL</h4>
+                <div class="footer-links">
+                    <a href="https://limondental.az" target="_blank" class="footer-link"><i class="fas fa-globe"></i> limondental.az</a>
+                    <a href="https://instagram.com/limondentalservis.az" target="_blank" class="footer-link"><i class="fab fa-instagram"></i> @limondentalservis.az</a>
+                    <a href="https://wa.me/994102502015" target="_blank" class="footer-link"><i class="fab fa-whatsapp"></i> WhatsApp: 010 250 20 15 / 070 380 06 78</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Limon Dental. Bütün hüquqlar qorunur.</p>
+        </div>
+    </footer>
+
+</div>
+<!-- END MAIN PAGE -->
+
+
+<!-- ==================== AYARLAR PANEL ==================== -->
+<div id="ayarlar-panel" class="ayarlar-panel hidden">
+
+    <header class="ayarlar-header">
+        <button class="geri-btn" id="closeAyarlar">
+            <i class="fas fa-arrow-left"></i> Geri Qayıt
+        </button>
+        <div class="ayarlar-header-logo">
+            <svg width="28" height="28" viewBox="0 0 40 40">
+                <ellipse cx="20" cy="20" rx="13" ry="18" fill="#e8c84a" transform="rotate(-30 20 20)"/>
+                <circle cx="20" cy="20" r="7" fill="#1a6b41"/>
+            </svg>
+            <div class="logo-text">
+                <span class="logo-brand">LİMON DENTAL</span>
+                <span class="logo-sub">SERVICE</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="ayarlar-body">
+
+        <!-- Left Menu -->
+        <nav class="ayarlar-menu">
+            <button class="menu-item active" data-section="satis">Satış <i class="fas fa-chevron-right"></i></button>
+            <button class="menu-item" data-section="servis">Servis <i class="fas fa-chevron-right"></i></button>
+            <button class="menu-item" data-section="xidmetler">Xidmətlər <i class="fas fa-chevron-right"></i></button>
+            <button class="menu-item" data-section="yeni-servis">Yeni servis müraciəti <i class="fas fa-chevron-right"></i></button>
+            <button class="menu-item" data-section="catdirilma">Çatdırılma və quraşdırılma <i class="fas fa-chevron-right"></i></button>
+            <button class="menu-item" data-section="elaqe">Bizimlə Əlaqə <i class="fas fa-chevron-right"></i></button>
+        </nav>
+
+        <!-- Right Content -->
+        <div class="ayarlar-content">
+
+            <!-- Satış -->
+            <div class="ayarlar-section active" id="section-satis">
+                <h2 class="ayarlar-section-title">Satış</h2>
+                <div class="ayarlar-contact-row">
+                    <a href="tel:+994556307791" class="ayarlar-contact-item">
+                        <i class="fas fa-phone"></i> +994 55 630 77 91
+                    </a>
+                    <a href="https://wa.me/994556307791" target="_blank" class="ayarlar-contact-item">
+                        <i class="fab fa-whatsapp"></i> +994 55 630 77 91
+                    </a>
+                </div>
+                <div class="media-grid" id="satisMediaGrid"></div>
+            </div>
+
+            <!-- Servis -->
+            <div class="ayarlar-section" id="section-servis">
+                <h2 class="ayarlar-section-title">Servis</h2>
+                <div class="media-grid" id="servisMediaGrid"></div>
+            </div>
+
+            <!-- Xidmətlər -->
+            <div class="ayarlar-section" id="section-xidmetler">
+                <h2 class="ayarlar-section-title">Xidmətlər</h2>
+                <p class="ayarlar-section-desc">Çatdırılma quraşdırılma xidməti və ehdiyat hissə ilə təmin olunması.</p>
+                <div class="media-grid" id="xidmetlerMediaGrid"></div>
+            </div>
+
+            <!-- Yeni Servis Müraciəti -->
+            <div class="ayarlar-section" id="section-yeni-servis">
+                <h2 class="form-main-title">AVADANLIQ QƏBUL FORMU</h2>
+                <form id="serviceForm" class="service-form" novalidate>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">1. Müştəri məlumatı</h3>
+                        <div class="form-group">
+                            <label for="fullName">Ad, Soyad</label>
+                            <input type="text" id="fullName" name="full_name" placeholder="Ad Soyad">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Telefon nömrəsi</label>
+                            <div class="phone-input-group">
+                                <select id="phoneCountry" name="phone_country">
+                                    <option value="+994">AZ +994</option>
+                                    <option value="+90">TR +90</option>
+                                    <option value="+7">RU +7</option>
+                                    <option value="+995">GE +995</option>
+                                    <option value="+374">AM +374</option>
+                                    <option value="+380">UA +380</option>
+                                    <option value="+49">DE +49</option>
+                                    <option value="+44">GB +44</option>
+                                    <option value="+33">FR +33</option>
+                                    <option value="+1">US +1</option>
+                                    <option value="+86">CN +86</option>
+                                    <option value="+971">AE +971</option>
+                                    <option value="+966">SA +966</option>
+                                    <option value="+98">IR +98</option>
+                                    <option value="+48">PL +48</option>
+                                    <option value="+36">HU +36</option>
+                                    <option value="+40">RO +40</option>
+                                    <option value="+43">AT +43</option>
+                                    <option value="+41">CH +41</option>
+                                    <option value="+31">NL +31</option>
+                                    <option value="+34">ES +34</option>
+                                    <option value="+39">IT +39</option>
+                                    <option value="+81">JP +81</option>
+                                    <option value="+82">KR +82</option>
+                                </select>
+                                <input type="tel" id="phoneNumber" name="phone_number" placeholder="50 123 45 67">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="email@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">2. Avadanlıq məlumatı</h3>
+                        <div class="form-group">
+                            <label for="equipmentName">Avadanlığın adı</label>
+                            <input type="text" id="equipmentName" name="equipment_name" placeholder="məs: CBCT, printer, motor və s.">
+                        </div>
+                        <div class="form-group">
+                            <label for="brandModel">Marka / model</label>
+                            <input type="text" id="brandModel" name="brand_model" placeholder="Marka / model">
+                        </div>
+                        <div class="form-group">
+                            <label for="serialNumber">Seriya nömrəsi</label>
+                            <input type="text" id="serialNumber" name="serial_number" placeholder="Seriya nömrəsi">
+                        </div>
+                        <div class="form-group">
+                            <label for="purchaseDate">Alınma tarixi</label>
+                            <input type="text" id="purchaseDate" name="purchase_date" placeholder="Alınma tarixi">
+                        </div>
+                        <div class="form-group">
+                            <label>Zəmanət var?</label>
+                            <div class="toggle-buttons" id="warrantyToggle">
+                                <button type="button" class="toggle-btn" data-group="warranty" data-value="Bəli">Bəli</button>
+                                <button type="button" class="toggle-btn" data-group="warranty" data-value="Xeyir">Xeyir</button>
+                            </div>
+                            <input type="hidden" id="warrantyValue" name="warranty">
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3 class="form-section-title">3. Problem məlumatı</h3>
+                        <div class="form-group">
+                            <label>Problemin təsviri</label>
+                            <div class="file-upload-area" id="fileUploadArea">
+                                <i class="fas fa-arrow-up-from-bracket"></i>
+                                Şəkil əlavə et (qalereyadan seç)
+                            </div>
+                            <input type="file" id="problemImages" name="problem_images" multiple accept="image/*">
+                            <div id="filePreview" class="file-preview"></div>
+                            <textarea id="problemDesc" name="problem_description" placeholder="Problemin təsvirini yazın..." rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="problemStart">Problem nə vaxtdan başlayıb?</label>
+                            <input type="text" id="problemStart" name="problem_start" placeholder="Problem nə vaxtdan başlayıb?">
+                        </div>
+                        <div class="form-group">
+                            <label>Əvvəl servis olunub?</label>
+                            <div class="toggle-buttons" id="servicedToggle">
+                                <button type="button" class="toggle-btn" data-group="serviced" data-value="Bəli">Bəli</button>
+                                <button type="button" class="toggle-btn" data-group="serviced" data-value="Xeyir">Xeyir</button>
+                            </div>
+                            <input type="hidden" id="servicedValue" name="prev_serviced">
+                        </div>
+                    </div>
+
+                    <div class="form-submit-area">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Göndər
+                        </button>
+                    </div>
+                </form>
+                <div id="formSuccess" class="form-success hidden">
+                    <i class="fas fa-check-circle"></i>
+                    <p>Müraciətiniz uğurla göndərildi! Tezliklə sizinlə əlaqə saxlanılacaq.</p>
+                </div>
+            </div>
+
+            <!-- Çatdırılma -->
+            <div class="ayarlar-section" id="section-catdirilma">
+                <h2 class="ayarlar-section-title">Çatdırılma və quraşdırılma</h2>
+                <p class="ayarlar-section-desc">Çatdırılma quraşdırılma xidməti və ehdiyat hissə ilə təmin olunması.</p>
+                <div class="media-grid" id="catdirilmaMediaGrid"></div>
+            </div>
+
+            <!-- Bizimlə Əlaqə -->
+            <div class="ayarlar-section" id="section-elaqe">
+                <h2 class="ayarlar-section-title">Bizimlə Əlaqə</h2>
+                <div class="elaqe-grid">
+                    <div class="elaqe-card">
+                        <div class="elaqe-card-label">TELEFON</div>
+                        <a href="tel:+994102502015" class="elaqe-item"><i class="fas fa-phone"></i> 010 250 20 15</a>
+                        <a href="tel:+994703800678" class="elaqe-item"><i class="fas fa-phone"></i> 070 380 06 78</a>
+                    </div>
+                    <div class="elaqe-card">
+                        <div class="elaqe-card-label">WHATSAPP</div>
+                        <a href="https://wa.me/994102502015" target="_blank" class="elaqe-item"><i class="fab fa-whatsapp"></i> 010 250 20 15</a>
+                        <a href="https://wa.me/994703800678" target="_blank" class="elaqe-item"><i class="fab fa-whatsapp"></i> 070 380 06 78</a>
+                    </div>
+                    <div class="elaqe-card">
+                        <div class="elaqe-card-label">ÜNVAN & EMAIL</div>
+                        <a href="https://maps.google.com/?q=Baku" target="_blank" class="elaqe-item"><i class="fas fa-location-dot"></i> Bakı, Səməd Vurğun 230</a>
+                        <a href="mailto:zaur.mikayilov@limondental.az" class="elaqe-item"><i class="fas fa-envelope"></i> zaur.mikayilov@limondental.az</a>
+                    </div>
+                    <div class="elaqe-card">
+                        <div class="elaqe-card-label">RƏSMİ SAYT</div>
+                        <a href="https://limondental.az" target="_blank" class="elaqe-item"><i class="fas fa-globe"></i> limondental.az</a>
+                        <a href="https://instagram.com/limondentalservis.az" target="_blank" class="elaqe-item"><i class="fab fa-instagram"></i> @limondentalservis.az</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- END AYARLAR PANEL -->
+
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox hidden">
+    <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+    <div class="lightbox-content" id="lightboxContent">
+        <img id="lightboxImg" src="" alt="">
+        <video id="lightboxVideo" controls></video>
+    </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
